@@ -4,12 +4,10 @@ import "./Products.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
-// MUI imports
 import CircularProgress from "@mui/material/CircularProgress";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 
-// 🔥 Progress Component
 function CircularProgressWithLabel({ value }) {
   return (
     <Box sx={{ position: "relative", display: "inline-flex" }}>
@@ -39,17 +37,15 @@ const Products = () => {
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState(0);
 
-  // 🔥 API CALL
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const res = await axios.get("https://dummyjson.com/recipes");
 
-        setProgress(60); // mid progress
-
+        setProgress(60);
         setProducts(res.data.recipes);
 
-        setProgress(100); // done
+        setProgress(100);
       } catch (err) {
         console.log("Error:", err);
       } finally {
@@ -60,7 +56,6 @@ const Products = () => {
     fetchProducts();
   }, []);
 
-  // 🔄 FAKE PROGRESS (smooth animation)
   useEffect(() => {
     const timer = setInterval(() => {
       setProgress((prev) => (prev < 90 ? prev + 10 : prev));
@@ -69,14 +64,12 @@ const Products = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // 🔍 SEARCH
   const filteredData = products.filter(
     (item) =>
       item.name.toLowerCase().includes(search.toLowerCase()) ||
-      item.instructions.join(" ").toLowerCase().includes(search.toLowerCase())
+      item.instructions.join(" ").toLowerCase().includes(search.toLowerCase()),
   );
 
-  // 🔽 SORT
   let sortedData = [...filteredData];
 
   if (sort === "atoz") {
@@ -89,7 +82,6 @@ const Products = () => {
 
   return (
     <>
-      {/* 🔍 SEARCH */}
       <div className="searchingbox">
         <input
           type="text"
@@ -100,7 +92,6 @@ const Products = () => {
         />
       </div>
 
-      {/* 🔽 SORT */}
       <div className="sortingbox">
         <select
           value={sort}
@@ -114,9 +105,14 @@ const Products = () => {
         </select>
       </div>
 
-      {/* ⏳ LOADER */}
       {loading ? (
-        <div style={{ display: "flex", justifyContent: "center", marginTop: "50px" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "50px",
+          }}
+        >
           <CircularProgressWithLabel value={progress} />
         </div>
       ) : (
@@ -126,8 +122,6 @@ const Products = () => {
           ) : (
             sortedData.map((item) => (
               <div key={item.id} className="product-card">
-
-                {/* ⚡ Lazy Image */}
                 <LazyLoadImage
                   src={item.image}
                   effect="blur"
@@ -138,14 +132,11 @@ const Products = () => {
                 <div className="product-details">
                   <h3>{item.name}</h3>
 
-                  <p>
-                    {item.instructions.join(" ").slice(0, 100)}...
-                  </p>
+                  <p>{item.instructions.join(" ").slice(0, 100)}...</p>
 
                   <p>⏱️ Time: {item.cookTimeMinutes} mins</p>
                   <p>⭐ Rating: {item.rating}</p>
                 </div>
-
               </div>
             ))
           )}
