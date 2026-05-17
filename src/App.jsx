@@ -2,6 +2,9 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./Components/Header";
 import Products from "./Components/Products";
+import Protectedroute from "./Components/Protectedroute";
+import Signup from "./Components/Signup";
+import Login from "./Components/Login";
 
 const App = () => {
   return (
@@ -9,9 +12,17 @@ const App = () => {
       <Header />
 
       <Routes>
-        <Route path="/" element={<Products />} />
+        <Route
+          path="/"
+          element={
+            <Protectedroute>
+              <Products />
+            </Protectedroute>
+          }
+        />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
 
-        {/* ❌ 404 Page */}
         <Route path="*" element={<h2>404 - Page Not Found</h2>} />
       </Routes>
     </BrowserRouter>
