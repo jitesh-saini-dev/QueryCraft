@@ -63,10 +63,10 @@ Since this is a learning project, I am completely open to feedback, code reviews
 📞 Connect with me
 Jitesh Saini
 
-LinkedIn
+LinkedIn: https://www.linkedin.com/in/jitesh-saini-dev/
 
-GitHub
+GitHub: https://github.com/jitesh-saini-dev
 
-LeetCode
+LeetCode: https://leetcode.com/u/jitesh-saini-dev/
 
    
