@@ -32,9 +32,8 @@ My main focus while building this was to understand how to manage global state, 
 
 | Signup & Validation | Home/Products Page |
 | :---: | :---: |
-| <img src="<img width="1536" height="730" alt="image" src="https://github.com/user-attachments/assets/11629433-cd5e-4c2e-a082-148a06972e01" />
-" width="400"/> | <img src="<img width="1536" height="731" alt="image" src="https://github.com/user-attachments/assets/a5080547-ee9b-4534-9e42-0e68a26be4db" />
-" width="400"/> |
+| <img width="1536" height="730" alt="image" src="https://github.com/user-attachments/assets/11629433-cd5e-4c2e-a082-148a06972e01" />| <img width="1536" height="731" alt="image" src="https://github.com/user-attachments/assets/a5080547-ee9b-4534-9e42-0e68a26be4db" />
+
 
 ## 🚀 How to Run Locally
 
