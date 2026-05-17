@@ -1,4 +1,4 @@
-<img width="1533" height="728" alt="image" src="https://github.com/user-attachments/assets/f6303039-90e9-46c4-891b-d8043807c04a" /># 🚀 QueryCraft
+<img width="1536" height="734" alt="image" src="https://github.com/user-attachments/assets/b8fb7fb0-877d-4578-8a62-4bb219948747" /># 🚀 QueryCraft
 
 > A frontend React application built to practice state management, routing, and UI design.
 
@@ -17,6 +17,7 @@ My main focus while building this was to understand how to manage global state, 
 - **User Authentication:** Built a custom Signup and Login flow using `localStorage` to save user data and session state.
 - **Protected Routes:** Implemented basic route guarding to ensure only logged-in users can view the recipes.
 - **State Management:** Used **Redux Toolkit (RTK)** and `createAsyncThunk` to fetch data from the DummyJSON API.
+- **Interactive Modal View:** Created a detailed, scrollable popup modal to display complete recipe information (ingredients, instructions, nutrition) without leaving the current page.
 - **Search & Filtering:** Added functionality to search recipes by name and filter them by different cuisines.
 - **Sorting:** Users can sort the data alphabetically, by top ratings, or by cooking time.
 - **Lazy Loading:** Used `react-lazy-load-image-component` for smoother image rendering.
@@ -30,32 +31,34 @@ My main focus while building this was to understand how to manage global state, 
 
 ## 📸 Sneak Peek
 
-| Signup & Validation | Home/Products Page |
+| Signup & Validation | Main Products Grid |
 | :---: | :---: |
-| <img width="1536" height="730" alt="image" src="https://github.com/user-attachments/assets/11629433-cd5e-4c2e-a082-148a06972e01" />| <img width="1536" height="731" alt="image" src="https://github.com/user-attachments/assets/a5080547-ee9b-4534-9e42-0e68a26be4db" />
+| <img width="1536" height="732" alt="image" src="https://github.com/user-attachments/assets/a2e9e2c6-fead-4bd1-92a7-0a6865b17ce9" />|<img width="1536" height="734" alt="image" src="https://github.com/user-attachments/assets/b8fb7fb0-877d-4578-8a62-4bb219948747" />|
 
+| Detailed Modal View |
+| :---: |
+| <img width="1536" height="731" alt="image" src="https://github.com/user-attachments/assets/a4b5aa51-6ebe-4ce6-bcf1-16d12a062388" /> |
 
 ## 🚀 How to Run Locally
 
 If you want to check out the code and run it on your machine, follow these steps:
 
 1. Clone the repository:
-   ```sh
-   git clone [https://github.com/jitesh-saini-dev/QueryCraft.git](https://github.com/jitesh-saini-dev/QueryCraft.git)
+   ```bash
+   git clone https://github.com/jitesh-saini-dev/QueryCraft.git
 
 2. Go to the project folder:
    
-
+   ```bash
    cd QueryCraft
    
 4. Install the dependencies:
-   
+   ```bash
    npm install
    
 6. Start the server:
-   
-   npm run dev
-   
+   ```bash
+   npm run dev 
    
 🤝 Feedback and Suggestions
 Since this is a learning project, I am completely open to feedback, code reviews, or suggestions on how I can write better React code. Feel free to reach out or open an issue!
