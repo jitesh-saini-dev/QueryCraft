@@ -43,19 +43,20 @@ If you want to check out the code and run it on your machine, follow these steps
    ```sh
    git clone [https://github.com/jitesh-saini-dev/QueryCraft.git](https://github.com/jitesh-saini-dev/QueryCraft.git)
 
+2. Go to the project folder:
+   
 
-   Go to the project folder:
-
-Bash
-cd QueryCraft
-Install the dependencies:
-
-Bash
-npm install
-Start the server:
-
-Bash
-npm run dev 
+   cd QueryCraft
+   
+4. Install the dependencies:
+   
+   npm install
+   
+6. Start the server:
+   
+   npm run dev
+   
+   
 🤝 Feedback and Suggestions
 Since this is a learning project, I am completely open to feedback, code reviews, or suggestions on how I can write better React code. Feel free to reach out or open an issue!
 
