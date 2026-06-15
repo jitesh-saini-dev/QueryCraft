@@ -293,7 +293,7 @@ const Products = () => {
               {/* Footer Tags */}
               <div className="mt-6 pt-4 border-t border-gray-200 text-xs text-gray-400">
                 <span className="font-semibold text-gray-500">Tags: </span>
-                {selectedItem.tags.join(", ")} |{" "}
+                {selectedItem.tags.join(", ")} |
                 {selectedItem.mealType.join(", ")} | {selectedItem.difficulty}
               </div>
             </div>

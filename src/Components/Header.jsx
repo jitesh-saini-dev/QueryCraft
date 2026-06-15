@@ -16,7 +16,7 @@ const Header = () => {
         to={"/signup"}
         className="text-[17px] font-semibold px-5 py-2 rounded-xl text-black bg-white transition-all duration-300 hover:text-blue-500 hover:bg-blue-50 hover:-translate-y-1"
       >
-        Signup
+        SignUp
       </Link>
 
       <Link

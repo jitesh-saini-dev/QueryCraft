@@ -7,7 +7,6 @@ const Login = () => {
     password: "",
   });
 
-  // Error state add kar diya Signup ki tarah
   const [error, setError] = useState({});
 
   const navigate = useNavigate();
@@ -17,17 +16,14 @@ const Login = () => {
 
     const errorobj = {};
 
-    // 1. Khali (Empty) fields ki validation
     if (form.email === "") errorobj.email = "Email is required";
     if (form.password === "") errorobj.password = "Password is required";
 
-    // Agar khali hai toh yahi se wapas bhej do error set karke
     if (Object.keys(errorobj).length > 0) {
       setError(errorobj);
       return;
     }
 
-    // 2. LocalStorage se user nikalna
     const result = JSON.parse(localStorage.getItem("user"));
 
     if (!result) {
@@ -36,7 +32,6 @@ const Login = () => {
       return;
     }
 
-    // 3. Match validation (Alert ki jagah error messages set kar diye UI ke liye)
     if (form.email !== result.email && form.password !== result.password) {
       errorobj.email = "Email not matched!";
       errorobj.password = "Password not matched!";
@@ -48,12 +43,11 @@ const Login = () => {
       errorobj.password = "Password not matched!";
       setError(errorobj);
     } else {
-      // Agar sab sahi hai toh error clear karo aur login karao
       setError({});
       alert("Login Successfully 🔥");
       navigate("/");
       localStorage.setItem("token", true);
-      
+
       setForm({
         email: "",
         password: "",
@@ -80,7 +74,6 @@ const Login = () => {
 
         {/* Form */}
         <form onSubmit={handlechange} className="space-y-5">
-          {/* Email */}
           <div>
             <input
               type="email"
@@ -94,10 +87,11 @@ const Login = () => {
                   : "border-[#ccc] focus:border-[#007bff] focus:shadow-[0_0_10px_rgba(0,123,255,0.3)]"
               }`}
             />
-            {error.email && <p className="text-red-500 text-sm mt-1 ml-1">{error.email}</p>}
+            {error.email && (
+              <p className="text-red-500 text-sm mt-1 ml-1">{error.email}</p>
+            )}
           </div>
 
-          {/* Password */}
           <div>
             <input
               type="password"
@@ -111,10 +105,11 @@ const Login = () => {
                   : "border-[#ccc] focus:border-[#007bff] focus:shadow-[0_0_10px_rgba(0,123,255,0.3)]"
               }`}
             />
-            {error.password && <p className="text-red-500 text-sm mt-1 ml-1">{error.password}</p>}
+            {error.password && (
+              <p className="text-red-500 text-sm mt-1 ml-1">{error.password}</p>
+            )}
           </div>
 
-          {/* Submit Button */}
           <button
             type="submit"
             className="w-full mt-2 py-4 rounded-2xl bg-[#007bff] hover:bg-blue-600 text-white font-bold text-lg shadow-[0_5px_15px_rgba(0,123,255,0.3)] hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(0,123,255,0.4)] transition-all duration-300"
